@@ -25,27 +25,12 @@ const images = [
   }
 ];
 
+const mainUl = document.querySelector('ul.gallery');
 
 
+const markup = images
+  .map(({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`)
+  .join('');
 
 
-
-// const mainUl = document.querySelector('ul.gallery');
-
-
-for( let i = 0; i < images.length; i++){
-  const li = document.createElement('li');
-  const img = document.createElement('img');
-
-  img.src = images[i].url;
-  img.alt = images[i].alt;
-
-  li.appendChild(img);
-  
-  
-console.log(document.querySelector('ul.gallery').appendChild(li));
-}
-
-
-
-
+mainUl.insertAdjacentHTML('beforeend', markup);

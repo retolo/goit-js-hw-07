@@ -18,8 +18,11 @@ const body = document.querySelector('body');
 
 
 button.addEventListener('click', (event) =>{
-  body.style.background = getRandomHexColor();
-  span.style.color = body.style.background;
+  const color = getRandomHexColor()
+  body.style.background = color;
+  const styleForSpan = body.style.background;
+  span.textContent = styleForSpan;
+  
 
 
 
